@@ -8,21 +8,10 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(GTest REQUIRED)
 
 include_directories(
+  ${PROJECT_BUILD_DIR}
   ${PROJECT_SOURCE_DIR}
   ${GTEST_INCLUDE_DIRS}
   )
-
-# Link executables
-add_executable(
-    build/sampleCryptoPangramsTest
-    tests/cryptopangrams_test.cpp
-    )
-
-target_link_libraries(
-    build/sampleCryptoPangramsTest
-    ${GTEST_LIBRARIES}
-    pthread
-    )
 
 # Link executables
 add_executable(
@@ -35,3 +24,17 @@ target_link_libraries(
     ${GTEST_LIBRARIES}
     pthread
     )
+
+# Link executables
+add_executable(
+   build/randomGeneratorTest
+   tests/random_generator_test.cpp
+   )
+
+target_link_libraries(
+   build/randomGeneratorTest
+   ${GTEST_LIBRARIES}
+   pthread
+   )
+
+
