@@ -1,5 +1,8 @@
-cmake_minimum_required(VERSION 2.6)
+cmake_minimum_required(VERSION 2.8)
 project(sample-code)
+
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Locate GTest
 find_package(GTest REQUIRED)
@@ -11,24 +14,24 @@ include_directories(
 
 # Link executables
 add_executable(
-    sampleCryptoPangramsTest
+    build/sampleCryptoPangramsTest
     tests/cryptopangrams_test.cpp
     )
 
 target_link_libraries(
-    sampleCryptoPangramsTest
+    build/sampleCryptoPangramsTest
     ${GTEST_LIBRARIES}
     pthread
     )
 
 # Link executables
 add_executable(
-    sampleTopKTest
+    build/sampleTopKTest
     tests/topK_test.cpp
     )
 
 target_link_libraries(
-    sampleTopKTest
+    build/sampleTopKTest
     ${GTEST_LIBRARIES}
     pthread
     )
