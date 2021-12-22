@@ -7,6 +7,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # Locate GTest
 find_package(GTest REQUIRED)
 
+make_directory(build)
+
 include_directories(
   ${PROJECT_BUILD_DIR}
   ${PROJECT_SOURCE_DIR}
@@ -37,4 +39,15 @@ target_link_libraries(
    pthread
    )
 
+# Link executables
+add_executable(
+   build/binaryGapTest
+   tests/binary_gap_test.cpp
+   )
+
+target_link_libraries(
+   build/binaryGapTest
+   ${GTEST_LIBRARIES}
+   pthread
+   )
 
