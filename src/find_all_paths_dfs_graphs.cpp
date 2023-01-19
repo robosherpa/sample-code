@@ -44,6 +44,7 @@ vector<string> find_all_paths(Vertex *origin, char dest) {
     
     std::shared_ptr<vector<string>> result = make_shared<vector<string>>();
 
+    
     std::function<void(Vertex*, string)> recursion;
     recursion = [&](Vertex* current, string path )   {
         
